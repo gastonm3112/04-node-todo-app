@@ -1,10 +1,8 @@
 const { inquirerMenu, inquirerInput } = require('./helpers/inquirer')
-
-const TaskRepository = require('./repositories/TaskRepository');
+const { getAllTasks, createTask } = require('./services/fileService');
 
 const main = async () => {
-    //Instaciando la clase desde TaskRepository
-    const taskRepository = new TaskRepository();
+
     let option = '';
     do {
         option = await inquirerMenu();
@@ -18,7 +16,7 @@ const main = async () => {
 
                 const title = await inquirerInput('Task title');
 
-                taskRepository.createTask(title);
+                createTask(title);
 
                 console.log(title);
 
@@ -26,7 +24,7 @@ const main = async () => {
             case 2:
 
                 //Mostrar lista de tareas de la base de datos
-                const allTasks = taskRepository.getAllTask();
+                const allTasks = getAllTasks();
                 console.log(allTasks);
                 break;
         }
