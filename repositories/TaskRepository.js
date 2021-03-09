@@ -23,7 +23,7 @@ class TaskRepository {
      * 
      * @param {String} title 
      * 
-     * TODO: Nos falta persistir datos en archivo
+     * 
      * 
      */
     createTask(title) {
@@ -33,12 +33,19 @@ class TaskRepository {
 
     }
 
-    deleteTask() {
-
+    deleteTask(title) {
+        this._tasks = this._tasks.filter((task) => task.title !== title);
+        saveData(this._tasks);
     }
 
-    completeTask() {
-
+    completeTask(title) {
+        this._tasks.map(task => {
+            if (task.title === title) {
+                task.done = true;
+                task.finished = new Date();
+            }
+        });
+        saveData(this._tasks);
     }
 }
 

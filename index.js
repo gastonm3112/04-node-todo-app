@@ -1,5 +1,5 @@
 const { inquirerMenu, inquirerInput } = require('./helpers/inquirer')
-const { getAllTasks, createTask } = require('./services/fileService');
+const { getAllTasks, createTask, completeTask, deleteTask } = require('./services/taskService');
 
 const main = async () => {
 
@@ -27,6 +27,22 @@ const main = async () => {
                 const allTasks = getAllTasks();
                 console.log(allTasks);
                 break;
+            case 3:
+
+                const completedTask = await inquirerInput('Which task you complete?')
+
+                completeTask(completedTask);
+
+                console.log(completedTask);
+                break;
+            case 4:
+                const eliminateTask = await inquirerInput('Which task you want to eliminate?');
+
+                deleteTask(eliminateTask);
+
+                console.log(deleteTask);
+                break;
+
         }
     } while (option !== 0);
 
