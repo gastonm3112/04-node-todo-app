@@ -20,6 +20,24 @@ Selecciona la opción 1 para crear una tarea, se te solicitará el titulo de la 
 
 <img src="img/crear_tarea.png" alt ="Como crear una tarea">
 
+## Obtener lista de tareas
+
+Selecciona la opción 2 para ver todas las tareas creadas
+
+<img src="img/getTasks.png" alt ="Tabla con las tareas creadas">
+
+## Colocar la tarea como completada
+
+Selecciona la opción 3 para colocar la tarea deseada como completa
+
+<img src="img/completeTask.png" alt ="Completar una tarea">
+
+## Eliminar tarea
+
+Selecciona la opción 3 para eliminar una tarea
+
+<img src="img/deleteTask.png" alt ="Eliminando una tarea">
+
 ## Notas
 
 Agradecimiento especial a FerKtu por su curso de Node.js
