@@ -11,21 +11,18 @@ const main = async () => {
         switch (option) {
             case 1:
 
-                //TODO: Hacer que el usuario pueda ingresar el titulo de la tarea
-                console.log('El usuario seleccionó la opción crear tarea');
-
                 const title = await inquirerInput('Task title');
 
                 createTask(title);
 
-                console.log(title);
+                console.log(title, "creada");
 
                 break;
             case 2:
 
                 //Mostrar lista de tareas de la base de datos
                 const allTasks = getAllTasks();
-                console.log(allTasks);
+                console.table(allTasks);
                 break;
             case 3:
 
@@ -33,14 +30,14 @@ const main = async () => {
 
                 completeTask(completedTask);
 
-                console.log(completedTask);
+                console.log(completedTask, "Completa");
                 break;
             case 4:
                 const eliminateTask = await inquirerInput('Which task you want to eliminate?');
 
                 deleteTask(eliminateTask);
 
-                console.log(deleteTask);
+                console.log("Tarea Eliminada");
                 break;
 
         }

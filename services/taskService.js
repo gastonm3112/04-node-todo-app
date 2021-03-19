@@ -7,7 +7,9 @@ const getAllTasks = () => {
         console.log(JSON.stringify(e));
         return {
             title: e.title,
-            done: e.done
+            done: e.done,
+            created: e.created,
+            finished: e.finished
         }
     });
 }

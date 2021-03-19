@@ -42,7 +42,7 @@ class TaskRepository {
         this._tasks.map(task => {
             if (task.title === title) {
                 task.done = true;
-                task.finished = new Date();
+                task.finished = new Date()
             }
         });
         saveData(this._tasks);
